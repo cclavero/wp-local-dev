@@ -1,0 +1,74 @@
+# wp-demo
+wp_config:
+  wp:
+    themes:
+      - id: atozshop
+        ver: 1.0.2
+        activate: false
+    plugins:
+      - id: akismet
+        ver: 5.3
+        activate: false
+      - id: google-analyticator
+        ver: 6.5.7
+        activate: false
+      - id: backwpup
+        ver: 4.0.1
+        activate: true
+      - id: wpforms-lite
+        ver: 1.8.5.2
+        activate: true
+      - id: disable-comments
+        ver: 2.4.5
+        activate: true
+      - id: stops-core-theme-and-plugin-updates
+        ver: 9.0.17
+        activate: true
+      - id: font-awesome
+        ver: 4.4.0
+        activate: false
+      - id: hello-dolly
+        ver: 1.7.2
+        activate: false
+      - id: flexslider-hg
+        ver: 2.1
+        activate: false
+      - id: polylang
+        ver: 3.5.2
+        activate: true
+      - id: regenerate-thumbnails
+        ver: 3.1.6
+        activate: true
+      - id: revision-control
+        ver: 2.3.2
+        activate: true
+      - id: simple-popup-plugin
+        ver: 4.4
+        activate: false
+      - id: sucuri-scanner
+        ver: 1.8.39
+        activate: true
+      - id: wp-google-fonts
+        ver: 3.1.5
+        activate: false
+      - id: wp-mail-logging
+        ver: 1.12.0
+        activate: true
+      - id: wp-modal-popup-with-cookie-integration
+        ver: 2.4
+        activate: false
+      - id: wp-pagenavi
+        ver: 2.94.1
+        activate: false
+      - id: wordpress-seo
+        ver: 21.5
+        activate: false
+  local:
+    themes:
+      - id: demo
+        path: ../local/themes/demo
+        activate: true
+    plugins:
+      - id: demo
+        path: ../local/plugins/demo
+        activate: true
