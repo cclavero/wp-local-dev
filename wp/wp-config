@@ -17,7 +17,7 @@ WP_NETWORK = "wp_net"
 WP_CLI_VERSION = "2.9.0"
 WP_CLI_WORKDIR = "/var/www/html"
 WP_THEMES_FOLDER = WP_CLI_WORKDIR + "/wp-content/themes"
-WP_PLUGINS_FOLDER = WP_CLI_WORKDIR +"/wp-content/plugins" 
+WP_PLUGINS_FOLDER = WP_CLI_WORKDIR +"/wp-content/plugins"
 WP_CMDS = {
     "docker_base": "docker run -it -v {}:" + WP_CLI_WORKDIR + " -w " + WP_CLI_WORKDIR + " -u {}:{} " + \
         "-e WORDPRESS_DB_HOST={} -e WORDPRESS_DB_NAME={} -e WORDPRESS_DB_USER={} -e WORDPRESS_DB_PASSWORD={} " + \
@@ -38,17 +38,17 @@ WP_CMDS = {
 
 def get_cmd_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument(CMD_ARG_OPT_FILE[0], CMD_ARG_OPT_FILE[1], required = True, 
+    parser.add_argument(CMD_ARG_OPT_FILE[0], CMD_ARG_OPT_FILE[1], required = True,
         help = "WP config file")
-    parser.add_argument(CMD_ARG_OPT_MODE[0], CMD_ARG_OPT_MODE[1], choices = CMD_ARG_OPT_MODE_VALS, required = True, 
+    parser.add_argument(CMD_ARG_OPT_MODE[0], CMD_ARG_OPT_MODE[1], choices = CMD_ARG_OPT_MODE_VALS, required = True,
         help = "Execution mode: {}".format(CMD_ARG_OPT_MODE_VALS))
     args = parser.parse_args()
     return args
-    
+
 def get_docker_wp_cli_cmd():
     load_dotenv()
-    return WP_CMDS["docker_base"].format(WP_VOL, os.getgid(), os.getuid(), os.getenv("WP_DB_HOST"), os.getenv("WP_DB_NAME"), os.getenv("WP_DB_USER"), 
-        os.getenv("WP_DB_PASSWORD"), WP_NETWORK, WP_CLI_VERSION, WP_CMDS["cmd_placeholder"]) 
+    return WP_CMDS["docker_base"].format(WP_VOL, os.getgid(), os.getuid(), os.getenv("WP_DB_HOST"), os.getenv("WP_DB_NAME"), os.getenv("WP_DB_USER"),
+        os.getenv("WP_DB_PASSWORD"), WP_NETWORK, WP_CLI_VERSION, WP_CMDS["cmd_placeholder"])
 
 def get_wp_themes(themes):
     cmd = []
@@ -65,7 +65,7 @@ def get_wp_plugins(plugins):
             cmd = cmd + [WP_CMDS["wp_cli_plugin_install"].format(plugin["id"], plugin["ver"]).strip()]
             op = "activate" if plugin["activate"] else "deactivate"
             cmd = cmd + [WP_CMDS["wp_cli_plugin_activate"].format(op, plugin["id"]).strip()]
-    return cmd 
+    return cmd
 
 def get_wp_copy(items):
     cmd = []
@@ -76,7 +76,7 @@ def get_wp_copy(items):
             cmd = cmd + [item]
     return cmd
 
-def get_wp_cli_cmds(args):    
+def get_wp_cli_cmds(args):
     if not os.path.exists(args.file):
         sys.exit("Error: WP config file not found: {}".format(args.file))
     print("- WP config file: {}".format(args.file))
@@ -100,7 +100,7 @@ def get_wp_cli_cmds(args):
     }
     print("- WP CLI commands: '[ pre: {}, wp_themes: {}, wp_plugins: {}, local_themes: {}, local_plugins: {}, post: {}]'"
         .format(len(cmds["pre"]), len(cmds["wp"]["themes"]), len(cmds["wp"]["plugins"]), len(cmds["local"]["themes"]),len(cmds["local"]["plugins"]), len(cmds["post"])))
-    return cmds 
+    return cmds
 
 def exec_wp_cli(cmd_docker_wp_cli, id, cmds):
     if len(cmds) > 0:

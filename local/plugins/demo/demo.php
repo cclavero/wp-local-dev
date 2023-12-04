@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: demo
-Plugin URI: 
+Plugin URI:
 Description: Demo plugin
 Author: Carles Clavero i Matas
 Author URI: carles.clavero@gmail.com

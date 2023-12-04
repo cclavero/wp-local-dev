@@ -15,12 +15,12 @@ services:
     volumes:
       - ./wp-data:/var/www/html
     networks:
-      - net  
+      - net
     restart: always
     depends_on:
       - db
       - phpmyadmin
-   
+
   db:
     image: mariadb:11.1.3
     container_name: wp-db
@@ -34,7 +34,7 @@ services:
     networks:
       - net
     restart: always
- 
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5.2.1
     container_name: wp-phpmyadmin
@@ -44,7 +44,7 @@ services:
     ports:
       - 8180:80
     networks:
-      - net 
+      - net
     restart: always
     depends_on:
       - db
