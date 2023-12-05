@@ -25,6 +25,11 @@ clean:
 		docker volume rm -f wp_db_data && \
 		sudo rm -rf ./wp/wp-data;
 
+## pre-commit	Execute pre-commit hooks
+pre-commit:
+	@echo -e "\n> Execute pre-commit";
+	pre-commit run --all-files;
+
 ## start		Start the wordpress and related web apps (phpMyAdmin)
 start:
 	@echo -e "\n> Start wordpress";
@@ -36,7 +41,7 @@ start:
 		mkdir -p wp/wp-data/wp-content/upgrade;
 
 ## config 	Configure and install all the plugins, themes etc in the wordpress
-##		Vars: 
+##		Vars:
 ##			file: Path to the wp config file, for example '../config/wp-demo.yaml'
 ##          		mode: Execution mode. Must be one of: ['all', 'wp', 'local']
 ##		Example: $ make config file=../config/wp-demo.yaml mode=local

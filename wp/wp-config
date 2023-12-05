@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
-import sys, os, yaml, argparse
+import sys
+import os
+import yaml
+import argparse
 from dotenv import load_dotenv
 from yaml.loader import SafeLoader
 
@@ -17,11 +20,11 @@ WP_NETWORK = "wp_net"
 WP_CLI_VERSION = "2.9.0"
 WP_CLI_WORKDIR = "/var/www/html"
 WP_THEMES_FOLDER = WP_CLI_WORKDIR + "/wp-content/themes"
-WP_PLUGINS_FOLDER = WP_CLI_WORKDIR +"/wp-content/plugins" 
+WP_PLUGINS_FOLDER = WP_CLI_WORKDIR + "/wp-content/plugins"
 WP_CMDS = {
-    "docker_base": "docker run -it -v {}:" + WP_CLI_WORKDIR + " -w " + WP_CLI_WORKDIR + " -u {}:{} " + \
-        "-e WORDPRESS_DB_HOST={} -e WORDPRESS_DB_NAME={} -e WORDPRESS_DB_USER={} -e WORDPRESS_DB_PASSWORD={} " + \
-        "--network={} --name wp-cli --rm wordpress:cli-{} /bin/bash -c \"{}\"",
+    "docker_base": "docker run -it -v {}:" + WP_CLI_WORKDIR + " -w " + WP_CLI_WORKDIR + " -u {}:{} "
+                   "-e WORDPRESS_DB_HOST={} -e WORDPRESS_DB_NAME={} -e WORDPRESS_DB_USER={} -e WORDPRESS_DB_PASSWORD={} "
+                   "--network={} --name wp-cli --rm wordpress:cli-{} /bin/bash -c \"{}\"",
     "docker_copy": "docker cp {} wp-wordpress:{}",
     "cmd_placeholder": "#cmd",
     "rm_folder": "rm -rf {}",
@@ -38,53 +41,59 @@ WP_CMDS = {
 
 def get_cmd_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument(CMD_ARG_OPT_FILE[0], CMD_ARG_OPT_FILE[1], required = True, 
-        help = "WP config file")
-    parser.add_argument(CMD_ARG_OPT_MODE[0], CMD_ARG_OPT_MODE[1], choices = CMD_ARG_OPT_MODE_VALS, required = True, 
-        help = "Execution mode: {}".format(CMD_ARG_OPT_MODE_VALS))
+    parser.add_argument(CMD_ARG_OPT_FILE[0], CMD_ARG_OPT_FILE[1], required=True, help="WP config file")
+    parser.add_argument(CMD_ARG_OPT_MODE[0], CMD_ARG_OPT_MODE[1], choices=CMD_ARG_OPT_MODE_VALS, required=True,
+                        help="Execution mode: {}".format(CMD_ARG_OPT_MODE_VALS))
     args = parser.parse_args()
     return args
-    
+
+
 def get_docker_wp_cli_cmd():
     load_dotenv()
-    return WP_CMDS["docker_base"].format(WP_VOL, os.getgid(), os.getuid(), os.getenv("WP_DB_HOST"), os.getenv("WP_DB_NAME"), os.getenv("WP_DB_USER"), 
-        os.getenv("WP_DB_PASSWORD"), WP_NETWORK, WP_CLI_VERSION, WP_CMDS["cmd_placeholder"]) 
+    return WP_CMDS["docker_base"].format(WP_VOL, os.getgid(), os.getuid(), os.getenv("WP_DB_HOST"), os.getenv("WP_DB_NAME"), os.getenv("WP_DB_USER"),
+                                         os.getenv("WP_DB_PASSWORD"), WP_NETWORK, WP_CLI_VERSION, WP_CMDS["cmd_placeholder"])
+
 
 def get_wp_themes(themes):
     cmd = []
-    if themes != None:
+    if themes is not None:
         for theme in themes:
             activate = "--activate" if theme["activate"] else ""
             cmd = cmd + [WP_CMDS["wp_cli_theme_install"].format(theme["id"], theme["ver"], activate).strip()]
     return cmd
 
+
 def get_wp_plugins(plugins):
     cmd = []
-    if plugins != None:
+    if plugins is not None:
         for plugin in plugins:
             cmd = cmd + [WP_CMDS["wp_cli_plugin_install"].format(plugin["id"], plugin["ver"]).strip()]
             op = "activate" if plugin["activate"] else "deactivate"
             cmd = cmd + [WP_CMDS["wp_cli_plugin_activate"].format(op, plugin["id"]).strip()]
-    return cmd 
+    return cmd
+
 
 def get_wp_copy(items):
     cmd = []
-    if items != None:
+    if items is not None:
         for item in items:
             if not os.path.exists(item["path"]) or not os.path.isdir(item["path"]):
                 sys.exit("Error: Local source path doesn't exists or is not valid: '{}'".format(item["path"]))
             cmd = cmd + [item]
     return cmd
 
-def get_wp_cli_cmds(args):    
+
+def get_wp_cli_cmds(args):
     if not os.path.exists(args.file):
         sys.exit("Error: WP config file not found: {}".format(args.file))
     print("- WP config file: {}".format(args.file))
     try:
         with open(args.file) as f:
             config = yaml.load(f, Loader=SafeLoader)
-    except:
-        sys.exit("Error: Reading WP config file: {}".format(args.file))
+    except (IOError, OSError) as err:
+        sys.exit("Error: Reading WP config file: {}\n{}".format(args.file, err))
+    finally:
+        f.close()
     print("- Mode: {}".format(args.mode))
     cmds = {
         "pre": WP_CMDS["pre"],
@@ -99,8 +108,9 @@ def get_wp_cli_cmds(args):
         "post": WP_CMDS["post"]
     }
     print("- WP CLI commands: '[ pre: {}, wp_themes: {}, wp_plugins: {}, local_themes: {}, local_plugins: {}, post: {}]'"
-        .format(len(cmds["pre"]), len(cmds["wp"]["themes"]), len(cmds["wp"]["plugins"]), len(cmds["local"]["themes"]),len(cmds["local"]["plugins"]), len(cmds["post"])))
-    return cmds 
+          .format(len(cmds["pre"]), len(cmds["wp"]["themes"]), len(cmds["wp"]["plugins"]), len(cmds["local"]["themes"]), len(cmds["local"]["plugins"]), len(cmds["post"])))
+    return cmds
+
 
 def exec_wp_cli(cmd_docker_wp_cli, id, cmds):
     if len(cmds) > 0:
@@ -109,14 +119,17 @@ def exec_wp_cli(cmd_docker_wp_cli, id, cmds):
         shell_cmd = cmd_docker_wp_cli.replace(WP_CMDS["cmd_placeholder"], cmds)
         os.system(shell_cmd)
 
+
 def exec_rm_folder(cmd_docker_wp_cli, trg_path):
     cmd = WP_CMDS["rm_folder"].format(WP_THEMES_FOLDER + "/" + trg_path)
     shell_cmd = cmd_docker_wp_cli.replace(WP_CMDS["cmd_placeholder"], cmd)
     os.system(shell_cmd)
 
+
 def exec_docker_copy(cmd_docker_copy, src_path, trg_path):
     shell_cmd = cmd_docker_copy.format(src_path, trg_path)
     os.system(shell_cmd)
+
 
 def exec_docker_copy_themes(cmd_docker_copy, cmd_docker_wp_cli, themes):
     if len(themes) > 0:
@@ -130,6 +143,7 @@ def exec_docker_copy_themes(cmd_docker_copy, cmd_docker_wp_cli, themes):
                 shell_cmd = cmd_docker_wp_cli.replace(WP_CMDS["cmd_placeholder"], cmd)
                 os.system(shell_cmd)
 
+
 def exec_docker_copy_plugins(cmd_docker_copy, cmd_docker_wp_cli, plugins):
     if len(plugins) > 0:
         print("- Copy of local WP Plugins to WP path {}:".format(WP_PLUGINS_FOLDER))
@@ -141,6 +155,7 @@ def exec_docker_copy_plugins(cmd_docker_copy, cmd_docker_wp_cli, plugins):
             cmd = "wp " + WP_CMDS["wp_cli_plugin_activate"].format(op, plugin["id"]).strip()
             shell_cmd = cmd_docker_wp_cli.replace(WP_CMDS["cmd_placeholder"], cmd)
             os.system(shell_cmd)
+
 
 def execute_wp_config():
     print("WP Config updater (ver. {})".format(CMD_VER))

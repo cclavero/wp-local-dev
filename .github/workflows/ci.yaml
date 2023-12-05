@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    runs-on: [ubuntu-22.04]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10.6
+      - name: Run pre-commit
+        shell: bash
+        run: |
+          pip install pre-commit
+          make pre-commit
