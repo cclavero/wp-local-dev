@@ -1,3 +1,7 @@
 
+# backup
+backup/*
+!backup/.gitkeep
+
 # wp
 wp/wp-data

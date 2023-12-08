@@ -2,7 +2,7 @@ version: "3.6"
 services:
 
   wordpress:
-    image: wordpress:6.4.1
+    image: wordpress:${WP_VER}
     container_name: wp-wordpress
     environment:
       - WORDPRESS_DB_HOST=${WP_DB_HOST}
