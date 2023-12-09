@@ -13,8 +13,9 @@ All the project management and tasks can be done calling Makefile targets.
 
 ### Useful links
 
-- https://developer.wordpress.com/2022/11/14/seetup-local-development-environment-for-wordpress/
+- https://developer.wordpress.com/2022/11/14/seetup-local-development-environment-for-wordpress
 - https://github.com/kassambara/wordpress-docker-compose
+- https://rocketgeek.com/basics/using-wp-cli-to-migrate-copy-your-site
 
 ### Required installed commands
 
@@ -95,6 +96,24 @@ $ make start
 ...
 # Install themes and plugins, etc ...
 $ make stop
+...
+```
+
+1. Create a local WordPress environment backup:
+
+```bash
+$ make backup file=../backup/web1.zip mode=create
+...
+```
+
+1. Clean the local WordPress environment and restore previous local WordPress from backup:
+
+```bash
+$ make clean start
+...
+# Go to http://localhost:8080/wp-admin and install WordPress (minimum install)
+...
+$ make backup file=../backup/web1.zip mode=restore
 ...
 ```
 
