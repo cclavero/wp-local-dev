@@ -27,7 +27,7 @@ WP_CMDS = {
     "cmd_placeholder": "#cmd",
     "create_zip": "zip -r -T {} {}",
     "restore_zip": "unzip {} -d {}",
-    "rm_contents": "rm -rf {}", 
+    "rm_contents": "rm -rf {}",
     "list_files": "ls -lah {}",
     "backup_db_file_filter": "wordpress-*.sql"
 }
@@ -60,7 +60,7 @@ def find_file(base_path, ext):
     for file in os.listdir(base_path):
         if file.endswith(ext):
             return file
-    return   
+    return
 
 
 def exec_wp_backup_create(cmd_docker_wp_cli, backup_path):
@@ -121,7 +121,7 @@ def execute_wp_backup():
         case "restore":
             exec_wp_backup_restore(cmd_docker_wp_cli, backup_path)
         case _:
-            sys.exit("Error: Unexpected error for mode: {}".format(args.mode))   
+            sys.exit("Error: Unexpected error for mode: {}".format(args.mode))
 
 
 # Main ------------------------------------------------------------------------
