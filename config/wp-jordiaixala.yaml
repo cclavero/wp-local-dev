@@ -48,7 +48,7 @@ wp_config:
         activate: true
       - id: enable-media-replace
         ver: 4.1.5
-        activate: true  
+        activate: true
       # Other plugins
       # - id: google-analyticator
       #   ver: 6.5.7

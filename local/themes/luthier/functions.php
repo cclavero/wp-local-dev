@@ -11,16 +11,16 @@ define("LUT_LANG_PATH", LUT_TPL_URI."languages");
 define("LUT_CAT_PATH", get_stylesheet_directory()."/assets/catalogue/catalogue.json");
 define("LUT_LOC_STRINGS", array(
     "cat-materials" => array(
-        "ca" => "Fustes / Model", 
-        "es" => "Maderas / Modelo" 
+        "ca" => "Fustes / Model",
+        "es" => "Maderas / Modelo"
     ),
     "cat-price" => array(
-        "ca" => "Preu de venda", 
-        "es" => "Precio de venta" 
+        "ca" => "Preu de venda",
+        "es" => "Precio de venta"
     ),
     "cat-ask" => array(
-        "ca" => "Preguntar", 
-        "es" => "Preguntar" 
+        "ca" => "Preguntar",
+        "es" => "Preguntar"
     ),
     "cat-back" => array(
         "ca" => "Veure tots",
@@ -33,7 +33,7 @@ define("LUT_LOC_STRINGS", array(
     "orders-title" => array(
         "ca" => "Consultes i comandes",
         "es" => "Consultas y pedidos"
-    )    
+    )
 ));
 
 // Template functions ---------------------------------------------------------
@@ -70,7 +70,7 @@ add_action("template_redirect", function() {
 
 add_action("after_setup_theme", function() {
     load_child_theme_textdomain("luthier", LUT_LANG_PATH);
-    lut_debug("after_setup_theme");    
+    lut_debug("after_setup_theme");
 });
 
 // Helper functions -----------------------------------------------------------
@@ -150,7 +150,7 @@ function lut_get_catalogue_item_html($ref, $ref_data) {
     foreach($ref_data["items"] as $item) {
         $res .= "<tr>";
         $res .= sprintf("<td><div class=\"item\">%s</div><div class=\"note\">%s</div></td>", $item["item"], $item["note"]);
-        $price = ($item["price"] != "0") ? $price = str_replace(".", ",", sprintf("%0.2f €", $item["price"])) : $strs["cat-ask"] ; 
+        $price = ($item["price"] != "0") ? $price = str_replace(".", ",", sprintf("%0.2f €", $item["price"])) : $strs["cat-ask"] ;
         $res .= sprintf("<td><span class=\"price\">%s</span></td>", $price);
         $res .= "</tr>";
     }
@@ -197,7 +197,7 @@ add_shortcode("lut_catalogue", function($atts,$contents) {
         }
         if(array_key_exists($ref, $cat_data->accessories["refs"])) {
             return lut_get_catalogue_item_html($ref, $cat_data->accessories["refs"][$ref]);
-        }       
+        }
         return sprintf("<div class=\"cat-error\">Error: Bad 'ref' value for catalogue: %s</div>", $atts["ref"]);
     }
     return $res;

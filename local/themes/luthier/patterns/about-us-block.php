@@ -7,8 +7,8 @@
 
 $refs = lut_get_refs_ids(array(
     "about-us-post" => array(
-        "ca" => 125,  // Qui sóc i què faig 
-        "es" => 133  // Quién soy y qué hago 
+        "ca" => 125,  // Qui sóc i què faig
+        "es" => 133  // Quién soy y qué hago
     )
 ));
 ?>

@@ -7,12 +7,12 @@
 
 $strs = lut_get_strings(array(
     "not-found" => array(
-        "ca" => "404: Recurs no trobat !", 
-        "es" => "404: ¡ Recurso no encontrado !" 
+        "ca" => "404: Recurs no trobat !",
+        "es" => "404: ¡ Recurso no encontrado !"
     ),
     "not-found-desc" => array(
-        "ca" => "Recurs o URL no trobada al WebSite. <a href=\"/ca\">Anar l'inici</a>.", 
-        "es" => "Recurso o URL no encontrado en el WebSite. <a href=\"/es\">Ir al inicio</a>." 
+        "ca" => "Recurs o URL no trobada al WebSite. <a href=\"/ca\">Anar l'inici</a>.",
+        "es" => "Recurso o URL no encontrado en el WebSite. <a href=\"/es\">Ir al inicio</a>."
     )
 ));
 $imgs = lut_get_imgs(array(
@@ -32,11 +32,11 @@ $imgs = lut_get_imgs(array(
 
             <!-- wp:column {"width":"35%"} -->
             <div class="wp-block-column" style="flex-basis:35%">
-            
+
                 <!-- wp:image -->
                 <figure class="wp-block-image"><img src="<?php echo($imgs["404"]); ?>" alt="404" /></figure>
                 <!-- /wp:image -->
-            
+
             </div>
             <!-- /wp:column -->
 

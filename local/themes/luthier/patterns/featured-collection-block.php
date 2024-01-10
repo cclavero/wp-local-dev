@@ -7,8 +7,8 @@
 
 $refs = lut_get_refs_ids(array(
     "featured-post" => array(
-        "ca" => 137,  // Instruments i accessoris 
-        "es" => 139  // Instrumentos y accesorios 
+        "ca" => 137,  // Instruments i accessoris
+        "es" => 139  // Instrumentos y accesorios
     )
 ));
 ?>
@@ -22,4 +22,4 @@ $refs = lut_get_refs_ids(array(
     <?php echo(get_post_field("post_content",$refs["featured-post"])); ?>
 
 </div>
-<!-- /wp:group -->    
+<!-- /wp:group -->

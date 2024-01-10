@@ -10,7 +10,7 @@
 <script id="lut-custom" type="text/javascript">
 
     jQuery(document).ready(function() {
-    
+
         // lang
         var lang = jQuery("html").attr("lang").split("-")[0];
         var langObj = jQuery('a[href="/'+lang+'/"]');

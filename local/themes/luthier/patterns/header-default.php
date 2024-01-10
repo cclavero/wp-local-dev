@@ -7,18 +7,18 @@
 
 $refs = lut_get_refs_ids(array(
     "main-menu" => array(
-        "ca" => 35, // Main menu (CA) 
-        "es" => 51  // Main menu (ES) 
+        "ca" => 35, // Main menu (CA)
+        "es" => 51  // Main menu (ES)
     )
-)); 
+));
 ?>
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"20px","right":"var:preset|spacing|50","bottom":"20px","left":"var:preset|spacing|50"}}},"layout":{"type":"constrained","contentSize":"100%"}} -->
 <div class="wp-block-group" style="padding-top:20px;padding-right:var(--wp--preset--spacing--50);padding-bottom:20px;padding-left:var(--wp--preset--spacing--50)">
-    
+
     <!-- wp:columns {"verticalAlignment":"top"} -->
     <div class="wp-block-columns">
-        
+
         <!-- wp:column {"width":"35%"} -->
         <div class="wp-block-column" style="flex-basis:35%">
 
@@ -40,7 +40,7 @@ $refs = lut_get_refs_ids(array(
 
             <!-- Menu: Langs -->
             <!-- wp:navigation {"ref":43,"textColor":"sub-heading-color","overlayBackgroundColor":"background-alt","overlayTextColor":"sub-heading-color","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} /--></div>
-                        
+
         </div>
         <!-- /wp:column -->
 
