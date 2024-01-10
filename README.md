@@ -48,7 +48,6 @@ In the 'Workflows' section, you can see the most common commands and workflows.
 The project has 5 main folders:
 
 - '/.github': Folder for the GitHub CI/CD pipelines.
-- '/backup': Folder for the WP locale environment files, outcome of the '/wp/wp-backup' command line.
 - '/config': Folder for the WP config files to execute with the '/wp/wp-config' command line. An example of WP config file '/config/wp-demo.yaml' is provided and a documentation of their format in the 'WP config file format' section.
 - '/local': Folder for the local development of WP themes and plugins. A demo themes '/local/themes/demo' and plugins '/local/plugins/demo' are included as an example. The local themes and plugins are published using the '/wp/wp-config' command line with the correct WP config file.
 - '/wp': Main folder of the local docker WordPress environment, including: main docker-compose file and .env files, python scripts, docker mounted volumes like '/wp/wp-data', etc.
@@ -59,7 +58,7 @@ The project has 5 main folders:
 
 ```bash
 # Start a fresh new WordPress
-$ make start
+$ make start init
 ...
 # Go to http://localhost:8080/wp-admin and install WordPress
 ...
@@ -90,9 +89,9 @@ $ make stop
 1. Clean current local WordPress environment and start form scratch:
 
 ```bash
-$ make clean
+$ make clean start init
 ...
-$ make start
+# Go to http://localhost:8080/wp-admin and install WordPress
 ...
 # Install themes and plugins, etc ...
 $ make stop
@@ -109,7 +108,7 @@ $ make backup file=../backup/web1.zip mode=create
 1. Clean the local WordPress environment and restore previous local WordPress from backup:
 
 ```bash
-$ make clean start
+$ make clean start init
 ...
 # Go to http://localhost:8080/wp-admin and install WordPress (minimum install)
 ...

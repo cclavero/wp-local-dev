@@ -22,10 +22,7 @@ start:
 	@echo -e "\n> Start WordPress";
 	@docker-compose -f ./wp/docker-compose.yaml up --detach;
 	@echo -e "- Waiting for WordPress to start"
-	@until $$(curl -sIL http://localhost:8080 | grep -q 'HTTP/1.1 200 OK'); do (echo "Waiting..."; sleep 10s); done;
-	@echo -e "- Chown wp-data volume permissions"
-	@sudo chown -R $$(id -g):$$(id -u) ./wp/wp-data && \
-		mkdir -p wp/wp-data/wp-content/upgrade;
+	@until $$(curl -sIL http://localhost:8080 | grep -qE 'HTTP/1.1 20|HTTP/1.1 50'); do (echo "Waiting..."; sleep 10s); done;
 
 ## stop		Stop the WordPress and related web apps (phpMyAdmin)
 stop:
@@ -38,6 +35,14 @@ clean: stop
 	@docker-compose -f ./wp/docker-compose.yaml rm -v --stop --force && \
 		docker volume rm -f wp_db_data && \
 		sudo rm -rf ./wp/wp-data;
+
+## init		Init local env
+init:
+	@echo -e "\n> Init";
+	@sudo chown -R $$(id -g):$$(id -u) ./wp/wp-data && \
+		mkdir -p wp/wp-data/wp-content/upgrade && \
+		mkdir -p wp/wp-data/wp-content/uploads && \
+		sudo chmod 777 -Rf wp/wp-data/wp-content/uploads;
 
 ## config 	Configure and install all the plugins, themes etc in the WordPress
 ##		Vars:
