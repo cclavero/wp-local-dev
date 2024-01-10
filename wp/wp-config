@@ -28,9 +28,9 @@ WP_CMDS = {
     "docker_copy": "docker cp {} wp-wordpress:{}",
     "cmd_placeholder": "#cmd",
     "rm_folder": "rm -rf {}",
-    "wp_cli_theme_install": "theme install {} --version={} {}",
+    "wp_cli_theme_install": "theme install {} --version={} {} --force",
     "wp_cli_theme_activate": "theme activate {}",
-    "wp_cli_plugin_install": "plugin install {} --version={}",
+    "wp_cli_plugin_install": "plugin install {} --version={} --force",
     "wp_cli_plugin_activate": "plugin {} {}",
     "pre": ["cli info"],
     "post": []
@@ -121,7 +121,7 @@ def exec_wp_cli(cmd_docker_wp_cli, id, cmds):
 
 
 def exec_rm_folder(cmd_docker_wp_cli, trg_path):
-    cmd = WP_CMDS["rm_folder"].format(WP_THEMES_FOLDER + "/" + trg_path)
+    cmd = WP_CMDS["rm_folder"].format(trg_path)
     shell_cmd = cmd_docker_wp_cli.replace(WP_CMDS["cmd_placeholder"], cmd)
     os.system(shell_cmd)
 

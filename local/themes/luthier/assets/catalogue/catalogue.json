@@ -1,0 +1,1699 @@
+{
+    "instruments": {
+        "name": {
+            "ca": "Instruments",
+            "es": "Instrumentos"
+        },
+        "refs": [
+
+            {
+                "ref": "REF-C01",
+                "name": {
+                    "ca": "Sac de gemecs",
+                    "es": "Sac de gemecs"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 1089.00,
+                        "note": {
+                            "ca": "En Do major, Do# major, Re major, Sib major i Sol major. Preguntar per fustes de grall i bordons.",
+                            "es": "En Do mayor, Do# mayor, Re mayor, Sib mayor y Sol mayor. Preguntar por madera de grall y bordones."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 1089.00,
+                        "note": {
+                            "ca": "En Do major, Do# major, Re major, Sib major i Sol major. Preguntar per fustes de grall i bordons.",
+                            "es": "En Do mayor, Do# mayor, Re mayor, Sib mayor y Sol mayor. Preguntar por madera de grall y bordones."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 1635.50,
+                        "note": {
+                            "ca": "En Do major, Do# major, Re major, Sib major i Sol major. Preguntar per fustes de grall i bordons.",
+                            "es": "En Do mayor, Do# mayor, Re mayor, Sib mayor y Sol mayor. Preguntar por madera de grall y bordones."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 1815.00,
+                        "note": {
+                            "ca": "En Do major, Do# major, Re major, Sib major i Sol major. Preguntar per fustes de grall i bordons.",
+                            "es": "En Do mayor, Do# mayor, Re mayor, Sib mayor y Sol mayor. Preguntar por madera de grall y bordones."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-C02",
+                "name": {
+                    "ca": "Xeremia mallorquina",
+                    "es": "Xeremía mallorquina"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 1089.00,
+                        "note": {
+                            "ca": "En Do major, Do# major, Re major, Sib major i Sol major. Preguntar per fustes de grall i bordons.",
+                            "es": "En Do mayor, Do# mayor, Re mayor, Sib mayor y Sol mayor. Preguntar por madera de grall y bordones."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 1089.00,
+                        "note": {
+                            "ca": "En Do major, Do# major, Re major, Sib major i Sol major. Preguntar per fustes de grall i bordons.",
+                            "es": "En Do mayor, Do# mayor, Re mayor, Sib mayor y Sol mayor. Preguntar por madera de grall y bordones."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 1815.00,
+                        "note": {
+                            "ca": "En Do major, Do# major, Re major, Sib major i Sol major. Preguntar per fustes de grall i bordons.",
+                            "es": "En Do mayor, Do# mayor, Re mayor, Sib mayor y Sol mayor. Preguntar por madera de grall y bordones."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 1694.00,
+                        "note": {
+                            "ca": "En Do major, Do# major, Re major, Sib major i Sol major. Preguntar per fustes de grall i bordons.",
+                            "es": "En Do mayor, Do# mayor, Re mayor, Sib mayor y Sol mayor. Preguntar por madera de grall y bordones."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-C03",
+                "name": {
+                    "ca": "Gaita de boto aragonesa",
+                    "es": "Gaita de boto aragonesa"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 1028.50,
+                        "note": {
+                            "ca": "En Do major, Do# major, Re major, Sib major i Sol major. Preguntar per fustes de clarí i bordons.",
+                            "es": "En Do mayor, Do# mayor, Re mayor, Sib mayor y Sol mayor. Preguntar por madera de clarín y bordones."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 1028.50,
+                        "note": {
+                            "ca": "En Do major, Do# major, Re major, Sib major i Sol major. Preguntar per fustes de clarí i bordons.",
+                            "es": "En Do mayor, Do# mayor, Re mayor, Sib mayor y Sol mayor. Preguntar por madera de clarín y bordones."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 0,
+                        "note": {
+                            "ca": "En Do major, Do# major, Re major, Sib major i Sol major. Preguntar per fustes de clarí i bordons.",
+                            "es": "En Do mayor, Do# mayor, Re mayor, Sib mayor y Sol mayor. Preguntar por madera de clarín y bordones."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-C04",
+                "name": {
+                    "ca": "Grall per Sac de gemecs",
+                    "es": "Grall para Sac de gemecs"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 145.20,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 145.20,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 254.10,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 254.10,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 163.35,
+                        "note": {
+                            "ca": "En Do# major.",
+                            "es": "En Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 163.35,
+                        "note": {
+                            "ca": "En Do# major.",
+                            "es": "En Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 278.30,
+                        "note": {
+                            "ca": "En Do# major.",
+                            "es": "En Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 278.30,
+                        "note": {
+                            "ca": "En Do# major.",
+                            "es": "En Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 163.35,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 163.35,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 278.30,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 278.30,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 181.50,
+                        "note": {
+                            "ca": "En Sib major.",
+                            "es": "En Sib mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 181.50,
+                        "note": {
+                            "ca": "En Sib major.",
+                            "es": "En Sib mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 302.50,
+                        "note": {
+                            "ca": "En Sib major.",
+                            "es": "En Sib mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 302.50,
+                        "note": {
+                            "ca": "En Sib major.",
+                            "es": "En Sib mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 223.85,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 223.85,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 314.60,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 314.60,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 209.40,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 209.40,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 326.70,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 326.70,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 314.50,
+                        "note": {
+                            "ca": "En Fa major.",
+                            "es": "En Fa mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 314.50,
+                        "note": {
+                            "ca": "En Fa major.",
+                            "es": "En Fa mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Fa major.",
+                            "es": "En Fa mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Fa major.",
+                            "es": "En Fa mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-C05",
+                "name": {
+                    "ca": "Grall per Xeremia mallorquina",
+                    "es": "Grall para Xeremía mallorquina"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 169.40,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 181.50,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 181.50,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 181.50,
+                        "note": {
+                            "ca": "En Do# major.",
+                            "es": "En Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 242.00,
+                        "note": {
+                            "ca": "En Do# major.",
+                            "es": "En Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 242.00,
+                        "note": {
+                            "ca": "En Do# major.",
+                            "es": "En Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 217.80,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 266.20,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 266.20,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 266.20,
+                        "note": {
+                            "ca": "En Sib major.",
+                            "es": "En Sib mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 302.50,
+                        "note": {
+                            "ca": "En Sib major.",
+                            "es": "En Sib mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 302.50,
+                        "note": {
+                            "ca": "En Sib major.",
+                            "es": "En Sib mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 302.50,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 338.80,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 338.80,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 338.80,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Fa major.",
+                            "es": "En Fa mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 399.30,
+                        "note": {
+                            "ca": "En Fa major.",
+                            "es": "En Fa mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 399.30,
+                        "note": {
+                            "ca": "En Fa major.",
+                            "es": "En Fa mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-C06",
+                "name": {
+                    "ca": "Clarí per Gaita de boto",
+                    "es": "Clarín para Gaita de boto"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 145.20,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 145.20,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 254.10,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 254.10,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 163.35,
+                        "note": {
+                            "ca": "En Do# major.",
+                            "es": "En Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 163.35,
+                        "note": {
+                            "ca": "En Do# major.",
+                            "es": "En Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 278.30,
+                        "note": {
+                            "ca": "En Do# major.",
+                            "es": "En Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 278.30,
+                        "note": {
+                            "ca": "En Do# major.",
+                            "es": "En Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 163.35,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 163.35,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 278.30,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 278.30,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 181.50,
+                        "note": {
+                            "ca": "En Sib major.",
+                            "es": "En Sib mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 181.50,
+                        "note": {
+                            "ca": "En Sib major.",
+                            "es": "En Sib mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 302.50,
+                        "note": {
+                            "ca": "En Sib major.",
+                            "es": "En Sib mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 302.50,
+                        "note": {
+                            "ca": "En Sib major.",
+                            "es": "En Sib mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 223.85,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 223.85,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 314.60,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 314.60,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 209.40,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 209.40,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 326.70,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 326.70,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 314.50,
+                        "note": {
+                            "ca": "En Fa major.",
+                            "es": "En Fa mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 314.50,
+                        "note": {
+                            "ca": "En Fa major.",
+                            "es": "En Fa mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Fa major.",
+                            "es": "En Fa mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Fa major.",
+                            "es": "En Fa mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-C07",
+                "name": {
+                    "ca": "Caterineta",
+                    "es": "Caterineta"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller o boix",
+                            "es": "Almendro o boj"
+                        },
+                        "price": 0,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller o boix",
+                            "es": "Almendro o boj"
+                        },
+                        "price": 0,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Dol mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-G01",
+                "name": {
+                    "ca": "Gralla seca",
+                    "es": "Gralla seca"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 242.00,
+                        "note": {
+                            "ca": "En Sol major i Sol antic (barroc), amb anelles. Preguntar per 4 anelles i metall.",
+                            "es": "En Sol mayor y Sol antiguo (barroco) con anillas. Preguntar por 4 anillas y metal."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Sol major i Sol antic (barroc), amb anelles. Preguntar per 4 anelles i metall.",
+                            "es": "En Sol mayor y Sol antiguo (barroco) con anillas. Preguntar por 4 anillas y metal."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-G02",
+                "name": {
+                    "ca": "Gralla de dues claus",
+                    "es": "Gralla de dos llaves"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Sol major i Sol antic (barroc), amb claus de llautó.",
+                            "es": "En Sol mayor y Sol antiguo (barroco), con llaves de latón."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 484.00,
+                        "note": {
+                            "ca": "En Sol major i Sol antic (barroc), amb claus de llautó.",
+                            "es": "En Sol mayor y Sol antiguo (barroco), con llaves de latón."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-G03",
+                "name": {
+                    "ca": "Gralla de quatre claus",
+                    "es": "Gralla de cuatro llaves"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 847.00,
+                        "note": {
+                            "ca": "En Sol antic (barroc), amb claus i campana de llautó.",
+                            "es": "En Sol antiguo (barroco), con llaves y campana de latón."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 968.00,
+                        "note": {
+                            "ca": "En Sol antic (barroc), amb claus i campana de llautó.",
+                            "es": "En Sol antiguo (barroco), con llaves y campana de latón."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 1023.00,
+                        "note": {
+                            "ca": "En Sol antic (barroc), amb claus i campana de llautó.",
+                            "es": "En Sol antiguo (barroco), con llaves y campana de latón."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-D01",
+                "name": {
+                    "ca": "Dolçaina de les Terres de l'Ebre",
+                    "es": "Dulzaina de las Terres de l'Ebre"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 544.50,
+                        "note": {
+                            "ca": "En La-Re major, amb 4 anelles d'alpaca.",
+                            "es": "En La-Re mayor, con 4 anillas de alpaca."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-D02",
+                "name": {
+                    "ca": "Gaita llarga o Dolçaina en Fa major",
+                    "es": "Gaita larga o Dulzaina en Fa mayor"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 266.20,
+                        "note": {
+                            "ca": "En Sol-Do major.",
+                            "es": "En Sol-Do mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Sol-Do major.",
+                            "es": "En Sol-Do mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-D03",
+                "name": {
+                    "ca": "Dolçaina valenciana",
+                    "es": "Dulzaina valenciana"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 484.00,
+                        "note": {
+                            "ca": "En La-Re major.",
+                            "es": "En La-Re mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-D04",
+                "name": {
+                    "ca": "Dolçaina aragonesa",
+                    "es": "Dulzaina aragonesa"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 266.20,
+                        "note": {
+                            "ca": "En Sol-Do major, amb dos anelles. Preguntar per metall.",
+                            "es": "En Sol-Do mayor, con dos anillas. Preguntar por metal."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 423.50,
+                        "note": {
+                            "ca": "En Sol-Do major, amb dos anelles. Preguntar per metall.",
+                            "es": "En Sol-Do mayor, con dos anillas. Preguntar por metal."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 453.75,
+                        "note": {
+                            "ca": "En Sol-Do major, amb dos anelles. Preguntar per metall.",
+                            "es": "En Sol-Do mayor, con dos anillas. Preguntar por metal."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-D05",
+                "name": {
+                    "ca": "Pita de Albacete",
+                    "es": "Pita de Albacete"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 266.20,
+                        "note": {
+                            "ca": "En Sol-Do major, amb tres anelles. Preguntar per metall.",
+                            "es": "En Sol-Do mayor, con tres anillas. Preguntar por metal."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Cocobolo",
+                            "es": "Cocobolo"
+                        },
+                        "price": 423.50,
+                        "note": {
+                            "ca": "En Sol-Do major, amb tres anelles. Preguntar per metall.",
+                            "es": "En Sol-Do mayor, con tres anillas. Preguntar por metal."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Granadillo",
+                            "es": "Granadillo"
+                        },
+                        "price": 453.75,
+                        "note": {
+                            "ca": "En Sol-Do major, amb tres anelles. Preguntar per metall.",
+                            "es": "En Sol-Do mayor, con tres anillas. Preguntar por metal."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-D06",
+                "name": {
+                    "ca": "Dolçaineta o gralleta",
+                    "es": "Dulzainita o grallita"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 181.50,
+                        "note": {
+                            "ca": "En Do major.",
+                            "es": "En Do mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-D07",
+                "name": {
+                    "ca": "Requintet",
+                    "es": "Requintillo"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 266.20,
+                        "note": {
+                            "ca": "En La major.",
+                            "es": "En La mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-T01",
+                "name": {
+                    "ca": "Tarota tible o prima en Fa major o en Fa-Sol major",
+                    "es": "Tarota tible o prima en Fa mayor o en Fa-Sol mayor"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 423.50,
+                        "note": {
+                            "ca": "En Fa major i Sol-Fa major.",
+                            "es": "En Fa mayor y Sol-Fa mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 423.50,
+                        "note": {
+                            "ca": "En Fa major i Sol-Fa major.",
+                            "es": "En Fa mayor y Sol-Fa mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 726.00,
+                        "note": {
+                            "ca": "En Fa major i Sol-Fa major.",
+                            "es": "En Fa mayor y Sol-Fa mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-T02",
+                "name": {
+                    "ca": "Tarota tenor o contralt en Do major, Do# major i en Re major",
+                    "es": "Tarota tenor o contralto en Do mayor, Do# mayor y en Re mayor"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 484.00,
+                        "note": {
+                            "ca": "En Do o Do# major.",
+                            "es": "En Do o Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 484.00,
+                        "note": {
+                            "ca": "En Do o Do# major.",
+                            "es": "En Do o Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 847.00,
+                        "note": {
+                            "ca": "En Do o Do# major.",
+                            "es": "En Do o Do# mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 363.00,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Ginjoler",
+                            "es": "Azufaifo"
+                        },
+                        "price": 484.00,
+                        "note": {
+                            "ca": "En Re major.",
+                            "es": "En Re mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-T03",
+                "name": {
+                    "ca": "Trompa de Graus",
+                    "es": "Trompa de Graus"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Boix",
+                            "es": "Boj"
+                        },
+                        "price": 605.00,
+                        "note": {
+                            "ca": "En Fa-Sol major, en dues peces i amb estanyat tradicional.",
+                            "es": "En Fa-Sol mayor, en dos piezas y con estañado tradicional."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-T04",
+                "name": {
+                    "ca": "Tarota en Sol/La major",
+                    "es": "Tarota en Sol/La mayor"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Ametller",
+                            "es": "Almendro"
+                        },
+                        "price": 726.00,
+                        "note": {
+                            "ca": "En Sol-La major.",
+                            "es": "En Sol-La mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-R01",
+                "name": {
+                    "ca": "Cornamusa medieval",
+                    "es": "Gaita medieval"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Auró o boix",
+                            "es": "Arce o boj"
+                        },
+                        "price": 0,
+                        "note": {
+                            "ca": "En Sol major.",
+                            "es": "En Sol mayor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-R02",
+                "name": {
+                    "ca": "Tíbia utricolae o utrículum",
+                    "es": "Tíbia utricolae o utrículum"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Auró o boix",
+                            "es": "Arce o boj"
+                        },
+                        "price": 0,
+                        "note": {
+                            "ca": "En La menor.",
+                            "es": "En La menor."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-R03",
+                "name": {
+                    "ca": "Tíbiae",
+                    "es": "Tíbiae"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Auró o boix",
+                            "es": "Arce o boj"
+                        },
+                        "price": 0,
+                        "note": {
+                            "ca": "En La menor i Do major.",
+                            "es": "En La menor y Do mayor."
+                        }
+                    }
+                ]
+            }
+
+        ]
+    },
+    "accessories": {
+        "name": {
+            "ca": "Accessoris",
+            "es": "Accesories"
+        },
+        "refs": [
+
+            {
+                "ref": "REF-A01",
+                "name": {
+                    "ca": "Ínxes de cornamusa",
+                    "es": "Cañas de gaita"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Do i Do#",
+                            "es": "Do y Do#"
+                        },
+                        "price": 14.00,
+                        "note": {
+                            "ca": "",
+                            "es": ""
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Altres afinacions",
+                            "es": "Otras afinaciones"
+                        },
+                        "price": 0,
+                        "note": {
+                            "ca": "Preguntar disponibilitat.",
+                            "es": "Preguntar disponibilidad."
+                        }
+                    }
+                ]
+            },
+
+            {
+                "ref": "REF-A02",
+                "name": {
+                    "ca": "Ínxes de tarota",
+                    "es": "Cañas de tarota"
+                },
+                "items": [
+                    {
+                        "item": {
+                            "ca": "Estil dolçaina per Do i Re",
+                            "es": "Estilo dulzaina para Do y Re"
+                        },
+                        "price": 10.00,
+                        "note": {
+                            "ca": "",
+                            "es": ""
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Tarota Do, Fa i Re",
+                            "es": "Tarota Do, Fa y Re"
+                        },
+                        "price": 15.00,
+                        "note": {
+                            "ca": "",
+                            "es": ""
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Tarota Sol",
+                            "es": "Tarota Sol"
+                        },
+                        "price": 15.00,
+                        "note": {
+                            "ca": "",
+                            "es": ""
+                        }
+                    },
+                    {
+                        "item": {
+                            "ca": "Tarota Sol/La greu",
+                            "es": "Tarota Sol/La grave"
+                        },
+                        "price": 25.00,
+                        "note": {
+                            "ca": "",
+                            "es": ""
+                        }
+                    }
+                ]
+            }
+
+        ]
+    }
+}
