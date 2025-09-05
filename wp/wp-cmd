@@ -1,0 +1,373 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+import yaml
+import argparse
+import re
+from os.path import join, dirname
+from dotenv import load_dotenv
+from yaml.loader import SafeLoader
+
+
+# Constants -------------------------------------------------------------------
+
+CMD_VER = "1.1"
+CMD_ARGS = {
+    "env": {
+        "flags": ["-e", "--env"]
+    },
+    "op": {
+        "flags": ["-o", "--op"],
+        "values": ["configure", "backup"]
+    },
+    "file": {
+        "flags": ["-f", "--file"]
+    },
+    "configMode": {
+        "flags": ["-c", "--configMode"],
+        "values": ["all", "wp", "local"]
+    },
+    "backupMode": {
+        "flags": ["-b", "--backupMode"],
+        "values": ["create", "restore"]
+    }
+}
+WP_CLI = {
+    "version": "2.9.0",
+    "workdir": "/var/www/html",
+    "themesFolder": "/wp-content/themes",
+    "pluginsFolder": "/wp-content/plugins"
+}
+DOCKER_CMDS = {
+    "run": "docker run -it -v {}:" + WP_CLI["workdir"] + " -w " + WP_CLI["workdir"] + " -u {}:{} "
+            "-e WORDPRESS_DB_HOST={} -e WORDPRESS_DB_NAME={} -e WORDPRESS_DB_USER={} -e WORDPRESS_DB_PASSWORD={} "
+            "--network={} --name wp-cli --rm wordpress:cli-{} /bin/bash -c \"{}\"",
+    "copy": "docker cp {} wp-wordpress:{}",         
+    "subcmdPlaceholder": "#cmd"
+}
+CMDS = {
+    # global
+    "shell_delete": "rm -rf {}",
+    # config
+    "wpCLI_themeInstall": "theme install {} --version={} {} --force",
+    "wpCLI_themeActivate": "theme activate {}",
+    "wpCLI_pluginInstall": "plugin install {} --version={} --force",
+    "wpCLI_pluginActivate": "plugin {} {}",
+    "wpCLI_pre": ["cli info"],
+    "wpCLI_post": [],
+    # backup
+    "wpCLI_createBackupDB": "db export",
+    "wpCLI_restoreBackupDB": "db import {}",
+    "wpCLI_deleteDB": "db clean --yes",
+    "shell_createZIP": "zip -r -T {} {}",
+    "shell_restoreZIP": "unzip {} -d {}",
+    "shell_listFiles": "ls -lah {}",
+    "shell_backupDBFileFilter": "wordpress-*.sql"
+}
+
+# Classes ---------------------------------------------------------------------
+
+class DockerRunExec:
+
+    def __init__(self):
+        self.dockerRunCmd = DOCKER_CMDS["run"].format(os.getenv("WP_VOL"), os.getgid(), os.getuid(), os.getenv("WP_DB_HOST"), os.getenv("WP_DB_NAME"), os.getenv("WP_DB_USER"),
+        os.getenv("WP_DB_PASSWORD"), os.getenv("WP_NETWORK"), WP_CLI["version"], DOCKER_CMDS["subcmdPlaceholder"])
+
+    def exec(self, id, cmd):
+        print("- Execution of '{}':".format(id))
+        shell_cmd = self.dockerRunCmd.replace(DOCKER_CMDS["subcmdPlaceholder"], cmd)
+        os.system(shell_cmd)
+
+class DockerWPCLIExec:
+
+    def __init__(self, dockerRunExec):
+        self.dockerRunExec = dockerRunExec
+
+    def exec(self, id, cmds):
+        if len(cmds) > 0:
+            cmds = "wp " + " && wp ".join(cmds)
+            self.dockerRunExec.exec(id, cmds)
+
+
+# Functions -------------------------------------------------------------------
+
+def get_cmd_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(CMD_ARGS["env"]["flags"][0], CMD_ARGS["env"]["flags"][1], required=True, help="WP environment file path")
+    parser.add_argument(CMD_ARGS["op"]["flags"][0], CMD_ARGS["op"]["flags"][1], choices=CMD_ARGS["op"]["values"], 
+                        required=True, help="WP command operation: {}".format(CMD_ARGS["op"]["values"]))
+    parser.add_argument(CMD_ARGS["file"]["flags"][0], CMD_ARGS["file"]["flags"][1], required=True, help="WP config path or backup file path")
+    parser.add_argument(CMD_ARGS["configMode"]["flags"][0], CMD_ARGS["configMode"]["flags"][1], choices=CMD_ARGS["configMode"]["values"], 
+                        help="Execution mode: {}".format(CMD_ARGS["configMode"]["values"]))
+    parser.add_argument(CMD_ARGS["backupMode"]["flags"][0], CMD_ARGS["backupMode"]["flags"][1], choices=CMD_ARGS["backupMode"]["values"], 
+                        help="Execution mode: {}".format(CMD_ARGS["backupMode"]["values"]))
+    args = parser.parse_args()
+    match args.op:
+        case "configure":
+            if args.configMode is None:
+                sys.exit("Error: Bad or empty config mode: {}".format(CMD_ARGS["configMode"]["values"]))
+        case "backup":
+            if args.backupMode is None:
+                sys.exit("Error: Bad or empty backup mode: {}".format(CMD_ARGS["backupMode"]["values"]))
+    return args
+
+
+def get_wp_env(args):
+    load_dotenv(join(dirname(__file__), args.env))
+    env_pattern = re.compile(r'{prefix}\w+'.format(prefix="WP_"))
+    wp_env = {key:val for key, val in os.environ.items() if env_pattern.match(key)}
+    return wp_env 
+
+
+# -------------------------------------------------------------------------------
+
+# def get_wp_themes(themes):
+#     cmd = []
+#     if themes is not None:
+#         for theme in themes:
+#             activate = "--activate" if theme["activate"] else ""
+#             cmd = cmd + [WP_CMDS["wp_cli_theme_install"].format(theme["id"], theme["ver"], activate).strip()]
+#     return cmd
+
+
+# def get_wp_plugins(plugins):
+#     cmd = []
+#     if plugins is not None:
+#         for plugin in plugins:
+#             cmd = cmd + [WP_CMDS["wp_cli_plugin_install"].format(plugin["id"], plugin["ver"]).strip()]
+#             op = "activate" if plugin["activate"] else "deactivate"
+#             cmd = cmd + [WP_CMDS["wp_cli_plugin_activate"].format(op, plugin["id"]).strip()]
+#     return cmd
+
+
+# def get_wp_copy(items):
+#     cmd = []
+#     if items is not None:
+#         for item in items:
+#             if not os.path.exists(item["path"]) or not os.path.isdir(item["path"]):
+#                 sys.exit("Error: Local source path doesn't exists or is not valid: '{}'".format(item["path"]))
+#             cmd = cmd + [item]
+#     return cmd
+
+
+
+
+
+# TEMP
+#     cmds = {
+#         "wp": {
+#             "themes": get_wp_themes(config["wp_config"]["wp"]["themes"]),
+#             "plugins": get_wp_plugins(config["wp_config"]["wp"]["plugins"])
+#         },
+#         "local": {
+#             "themes": get_wp_copy(config["wp_config"]["local"]["themes"]),
+#             "plugins": get_wp_copy(config["wp_config"]["local"]["plugins"])
+#         },
+#     }
+
+
+#     print("- WP CLI commands: '[ pre: {}, wp_themes: {}, wp_plugins: {}, local_themes: {}, local_plugins: {}, post: {}]'"
+#           .format(len(cmds["pre"]), len(cmds["wp"]["themes"]), len(cmds["wp"]["plugins"]), len(cmds["local"]["themes"]), len(cmds["local"]["plugins"]), len(cmds["post"])))
+
+
+#     return cmds
+
+
+# def exec_rm_folder(cmd_docker_wp_cli, trg_path):
+#     cmd = WP_CMDS["rm_folder"].format(trg_path)
+#     shell_cmd = cmd_docker_wp_cli.replace(WP_CMDS["cmd_placeholder"], cmd)
+#     os.system(shell_cmd)
+
+
+# def exec_docker_copy(cmd_docker_copy, src_path, trg_path):
+#     shell_cmd = cmd_docker_copy.format(src_path, trg_path)
+#     os.system(shell_cmd)
+
+
+# def exec_docker_copy_themes(cmd_docker_copy, cmd_docker_wp_cli, themes):
+#
+# TEMP
+# WP_THEMES_FOLDER = WP_CLI_WORKDIR + "/wp-content/themes"
+# WP_PLUGINS_FOLDER = WP_CLI_WORKDIR + "/wp-content/plugins"
+#
+#     if len(themes) > 0:
+#         print("- Copy of local WP Themes to WP path {}:".format(WP_THEMES_FOLDER))
+#         for theme in themes:
+#             trg_path = WP_THEMES_FOLDER + "/" + theme["id"]
+#             exec_rm_folder(cmd_docker_wp_cli, trg_path)
+#             exec_docker_copy(cmd_docker_copy, theme["path"], trg_path)
+#             if theme["activate"]:
+#                 cmd = "wp " + WP_CMDS["wp_cli_theme_activate"].format(theme["id"]).strip()
+#                 shell_cmd = cmd_docker_wp_cli.replace(WP_CMDS["cmd_placeholder"], cmd)
+#                 os.system(shell_cmd)
+
+
+# def exec_docker_copy_plugins(cmd_docker_copy, cmd_docker_wp_cli, plugins):
+#
+# TEMP
+# WP_THEMES_FOLDER = WP_CLI_WORKDIR + "/wp-content/themes"
+# WP_PLUGINS_FOLDER = WP_CLI_WORKDIR + "/wp-content/plugins"
+#
+#     if len(plugins) > 0:
+#         print("- Copy of local WP Plugins to WP path {}:".format(WP_PLUGINS_FOLDER))
+#         for plugin in plugins:
+#             trg_path = WP_PLUGINS_FOLDER + "/" + plugin["id"]
+#             exec_rm_folder(cmd_docker_wp_cli, trg_path)
+#             exec_docker_copy(cmd_docker_copy, plugin["path"], trg_path)
+#             op = "activate" if plugin["activate"] else "deactivate"
+#             cmd = "wp " + WP_CMDS["wp_cli_plugin_activate"].format(op, plugin["id"]).strip()
+#             shell_cmd = cmd_docker_wp_cli.replace(WP_CMDS["cmd_placeholder"], cmd)
+#             os.system(shell_cmd)
+
+
+
+
+
+
+
+# def exec_wp_cli(cmd_docker_wp_cli, cmd):
+#     cmd = "wp " + cmd
+#     shell_cmd = cmd_docker_wp_cli.replace(WP_CMDS["cmd_placeholder"], cmd)
+#     os.system(shell_cmd)
+
+
+# def find_file(base_path, ext):
+#     for file in os.listdir(base_path):
+#         if file.endswith(ext):
+#             return file
+#     return
+
+
+# def exec_wp_backup_create(cmd_docker_wp_cli, backup_path):
+#     # Create DB backup file
+#     exec_wp_cli(cmd_docker_wp_cli, WP_CMDS["create_backup_db"])
+#     # Create zip file with all the site files, inlcuding DB backup file
+#     full_path = backup_path["path"] + "/" + backup_path["file"]
+#     shell_cmd = WP_CMDS["create_zip"].format(full_path, WP_VOL)
+#     os.system(shell_cmd)
+#     # Delete DB backup files
+#     shell_cmd = WP_CMDS["rm_contents"].format(WP_VOL + "/" + WP_CMDS["backup_db_file_filter"])
+#     os.system(shell_cmd)
+#     # Show created backup file
+#     print("- Generated backup file:")
+#     shell_cmd = WP_CMDS["list_files"].format(full_path)
+#     os.system(shell_cmd)
+
+
+# def exec_wp_backup_restore(cmd_docker_wp_cli, backup_path):
+#     # Check if backup file exists
+#     full_path = backup_path["path"] + "/" + backup_path["file"]
+#     if not os.path.exists(full_path):
+#         sys.exit("Error: WP backup file not found: {}".format(full_path))
+#     # Delete current DB
+#     exec_wp_cli(cmd_docker_wp_cli, WP_CMDS["delete_db"])
+#     # Delete WP data volume
+#     wp_all_contents = "{}/.htaccess {}/*.* {}/*".format(WP_VOL, WP_VOL, WP_VOL)
+#     shell_cmd = WP_CMDS["rm_contents"].format(wp_all_contents)
+#     os.system(shell_cmd)
+#     # Unzip zip file, including DB backup file
+#     shell_cmd = WP_CMDS["restore_zip"].format(full_path, "./")
+#     os.system(shell_cmd)
+#     # Get the backup DB file
+#     db_backup_file = find_file(WP_VOL, ".sql")
+#     print("- DB backup file: '{}'".format(db_backup_file))
+#     # Restore DB backup file
+#     exec_wp_cli(cmd_docker_wp_cli, WP_CMDS["restore_backup_db"].format(db_backup_file))
+#     # Delete DB backup files
+#     shell_cmd = WP_CMDS["rm_contents"].format(WP_VOL + "/" + WP_CMDS["backup_db_file_filter"])
+#     os.system(shell_cmd)
+
+
+# def execute_wp_backup():
+#     print("WP Backup: ver. {}".format(CMD_VER))
+#     args = get_cmd_args()
+#     cmd_docker_wp_cli = get_docker_wp_cli_cmd()
+#     backup_path = {
+#         "path": os.path.dirname(os.path.abspath(args.file)),
+#         "file": os.path.basename(args.file)
+#     }
+#     if not os.path.exists(backup_path["path"]):
+#         sys.exit("Error: WP backup path not found: {}".format(backup_path["path"]))
+#     print("- WP backup path and file: {}".format(backup_path))
+#     print("- Mode: {}".format(args.mode))
+#     match args.mode:
+#         case "create":
+#             exec_wp_backup_create(cmd_docker_wp_cli, backup_path)
+#         case "restore":
+#             exec_wp_backup_restore(cmd_docker_wp_cli, backup_path)
+#         case _:
+#             sys.exit("Error: Unexpected error for mode: {}".format(args.mode))
+
+
+
+
+
+def execute_wp_configure(dockerWPCLIExec, file, configMode):
+    if not os.path.exists(file):
+        sys.exit("Error: WP config file not found: {}".format(file))
+    print("- WP config file: {}".format(file))
+    try:
+        with open(file) as f:
+            config = yaml.load(f, Loader=SafeLoader)
+    except (IOError, OSError) as err:
+        sys.exit("Error: Reading WP config file: {}\n{}".format(file, err))
+    finally:
+        f.close()
+    print("- Config mode: {}".format(configMode))
+
+
+    # TEMP
+    # # pre
+    # dockerWPCLIExec.exec("Pre", CMDS["wpCLI_pre"])
+    # # wp
+    # if configMode == "all" or configMode == "wp":
+
+    #     # TEMP
+    #     print("wp")
+    #         #     exec_wp_cli(cmd_docker_wp_cli, "WP Themes", cmds["wp"]["themes"])
+    #         #     exec_wp_cli(cmd_docker_wp_cli, "WP Plugins", cmds["wp"]["plugins"])
+    
+    # # local
+    # if configMode == "all" or configMode == "local":
+
+    #     # TEMP
+    #     print("local")
+    #         #     exec_docker_copy_themes(WP_CMDS["docker_copy"], cmd_docker_wp_cli, cmds["local"]["themes"])
+    #         #     exec_docker_copy_plugins(WP_CMDS["docker_copy"], cmd_docker_wp_cli, cmds["local"]["plugins"])
+    
+
+
+    # # post
+    # dockerWPCLIExec.exec("Post", CMDS["wpCLI_post"])
+
+
+def execute_wp_backup():
+    print("backup")
+    
+
+def execute_wp_cmd():
+    print("WP command: ver. {}".format(CMD_VER))
+
+    args = get_cmd_args()
+    wp_env = get_wp_env(args)
+    print("WP env: {}".format(wp_env))
+
+    dockerRunExec = DockerRunExec()
+    dockerWPCLIExec = DockerWPCLIExec(dockerRunExec)
+
+    match args.op:
+        case "configure":
+            execute_wp_configure(dockerWPCLIExec, args.file, args.configMode)
+        case "backup":
+
+            # TEMP
+            execute_wp_backup()
+            
+        case _:
+            sys.exit("Error: Unexpected operation: {}".format(args.op))
+
+
+# Main ------------------------------------------------------------------------
+
+execute_wp_cmd()

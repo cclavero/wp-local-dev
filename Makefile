@@ -47,13 +47,15 @@ init:
 ## config 	Configure and install all the plugins, themes etc in the WordPress
 ##		Vars:
 ##			file: Path to the WP config file, for example '../config/wp-demo.yaml'
-##          		mode: Execution mode. Must be one of: ['all', 'wp', 'local']
-##		Example: $ make config file=../config/wp-demo.yaml mode=all
+##          		configMode: Execution mode. Must be one of: ['all', 'wp', 'local']
+##		Example: $ make config file=../config/wp-demo.yaml configMode=all
 ##              	Note: WordPress must be successfully installed
 config: start
 	@echo -e "\n> Configure and install WordPress plugins and themes";
-	@cd wp && ./wp-config --file=$(file) --mode=$(mode)
+	@cd wp && ./wp-cmd --env=./.env --op=configure --file=$(file) --configMode=$(configMode) 
 
+
+# TODO
 ## backup		Execute a backup creation on restore of the WordPrass local environment
 ##      		Vars:
 ## 			file: Full path of the backup file to create or restore, for example '../backup/web1.zip'
@@ -62,7 +64,7 @@ config: start
 ##              	Note: WordPress must be successfully installed
 backup: start
 	@echo -e "\n> Create or restore a local WordPress backup";
-	@cd wp && ./wp-backup --file=$(file) --mode=$(mode)
+	@cd wp && ./wp-backup --file=$(file) --config-mode=$(mode)
 
 ##
 ## # Developing tasks -----------------------------------------------
@@ -71,4 +73,4 @@ backup: start
 ## pre-commit	Execute pre-commit hooks
 pre-commit:
 	@echo -e "\n> Execute pre-commit";
-	pre-commit run --all-files;
+	@pre-commit run --all-files;

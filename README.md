@@ -150,7 +150,7 @@ Once the WordPress local environment is successfully started, the following URLs
 
 1. phpMyAdmin website: http://localhost:8180
 
-- Login/Password: 'root'/ See 'MYSQL_ROOT_PASSWORD' value in '/wp/.env' file.
+- Login/Password: 'root'/ See 'WP_MYSQL_ROOT_PASSWORD' value in '/wp/.env' file.
 
 ### WP config file format
 
